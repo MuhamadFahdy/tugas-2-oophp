@@ -31,8 +31,11 @@ $Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000);
 
 
 //menambahkan produk3
-$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000);
-
+$Produk3 = new Produk();
+$Produk3->judul = "Uncharted";
+$Produk3->penulis = "Neil Duckmann";
+$Produk3->penerbit = "Sony Computer";
+$Produk3->harga = "250000";
 
 //echo untuk menampilkan ke layar
 echo "Komik : ". $Produk2->getLabel();
