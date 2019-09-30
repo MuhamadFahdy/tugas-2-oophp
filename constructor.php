@@ -12,6 +12,11 @@ class Produk{
 		   $harga = "0";
 
 	//Method
+	public function __construct(){
+			
+	}
+
+	//Method
 	public function getLabel() {
 		return "$this->penulis,$this->penerbit";
 	}
