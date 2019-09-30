@@ -12,8 +12,8 @@ class Produk{
 		   $harga = "0";
 
 	//Method
-	public function __construct(){
-			
+	public function __construct( $judul, $penulis, $penerbit, $harga){
+
 	}
 
 	//Method
