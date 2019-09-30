@@ -5,6 +5,10 @@
 // Game
 
 class Produk{
+	public $judul,
+		   $penulis,
+		   $penerbit,
+		   $harga;
 
 }
 
