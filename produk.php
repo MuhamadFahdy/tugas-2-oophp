@@ -25,7 +25,13 @@ $Produk2->penulis = "Masashi Kishimoto";
 $Produk2->penerbit = "Shonen Jump";
 $Produk2->harga = "30000";
 
+$Produk3 = new Produk();
+$Produk3->judul = "Uncharted";
+$Produk3->penulis = "Neil Duckmann";
+$Produk3->penerbit = "Sony Computer";
+$Produk3->harga = "250000";
 
-echo "Komik : $Produk2->penulis, $Produk2->penerbit";
+echo "Komik : ". $Produk2->getLabel();
 echo "<br>";
-echo $Produk2->getLabel();
+echo "Game : " . $Produk3->getLabel();
+
