@@ -27,8 +27,10 @@ class Produk{
 }
 
 class CetakInfoProduk{
-	public function cetak($Produk){
-		$str = "{$Produk->judul} | {$Produk->getLabel()} | (Rp. {$Produk->harga})";
+	public function cetak( Produk $Produk){
+		$str = "{$Produk->judul} | {$Produk->getLabel()} (Rp. {$Produk->harga})";
+		return $str; 
+
 	}
 }
 
@@ -44,4 +46,10 @@ $Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000);
 echo "Komik : ". $Produk2->getLabel();
 echo "<br>";
 echo "Game : " . $Produk3->getLabel();
+echo "<br>";
+
+//instansiasi
+$infoProduk1 = new CetakInfoProduk();
+echo $infoProduk1->cetak($Produk2);
+
 
