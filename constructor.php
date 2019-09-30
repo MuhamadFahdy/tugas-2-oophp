@@ -27,11 +27,8 @@ class Produk{
 }
 
 //menambahkan produk2
-$Produk2 = new Produk();
-$Produk2->judul = "Naruto";
-$Produk2->penulis = "Masashi Kishimoto";
-$Produk2->penerbit = "Shonen Jump";
-$Produk2->harga = "30000";
+$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000);
+
 
 //menambahkan produk3
 $Produk3 = new Produk();
