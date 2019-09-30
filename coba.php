@@ -1,6 +1,6 @@
 <?php 
 
-class coba{
+class Coba{
 
 }
  
@@ -9,5 +9,5 @@ $b = new coba();
 $c = new coba();
 
 var_dump($a);
-
- ?>
+var_dump($b);
+var_dump($c);
