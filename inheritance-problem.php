@@ -9,7 +9,9 @@ class Produk{
 	public $judul ,
 		   $penulis ,
 		   $penerbit ,
-		   $harga;
+		   $harga,
+		   $jmlHalaman,
+		   $waktuMain;
 
 	//Method
 	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0){
@@ -43,13 +45,13 @@ $Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000);
 
 
 //echo untuk menampilkan ke layar
-echo "Komik : ". $Produk2->getLabel();
-echo "<br>";
-echo "Game : " . $Produk3->getLabel();
-echo "<br>";
+// echo "Komik : ". $Produk2->getLabel();
+// echo "<br>";
+// echo "Game : " . $Produk3->getLabel();
+// echo "<br>";
 
-//instansiasi
-$infoProduk1 = new CetakInfoProduk();
-echo $infoProduk1->cetak($Produk2);
+// //instansiasi
+// $infoProduk1 = new CetakInfoProduk();
+// echo $infoProduk1->cetak($Produk2);
 
 
