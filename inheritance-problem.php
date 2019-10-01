@@ -39,11 +39,11 @@ class CetakInfoProduk{
 }
 
 //menambahkan produk2
-$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0);
+$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0,"Komik");
 
 
 //menambahkan produk3
-$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50);
+$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50,"Game");
 
 
 //echo untuk menampilkan ke layar
