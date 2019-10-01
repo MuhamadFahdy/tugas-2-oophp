@@ -32,7 +32,7 @@ class Produk{
 
 	//method 
 	public function getInfoLengkap(){
-		$str = "{$this->tipe : {$this->judul} | {$this->getLabel()} ({$this->harga})";
+		$str = "{$this->tipe} : {$this->judul} | {$this->getLabel()} ({$this->harga})";
 		if ($this->tipe == "Komik") {
 			$str .= " - {$this->jmlHalaman} Halaman.";
 		} else if ($this->tipe == "Game") {
@@ -60,6 +60,7 @@ $Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0,
 $Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50,"Game");
 
 
+echo $Produk2->getInfoLengkap();
 //echo untuk menampilkan ke layar
 // echo "Komik : ". $Produk2->getLabel();
 // echo "<br>";
