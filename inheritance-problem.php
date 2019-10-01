@@ -30,6 +30,18 @@ class Produk{
 		return "$this->penulis,$this->penerbit";
 	}
 
+	//method 
+	public function getInfoLengkap(){
+		$str = "{$this->tipe : {$this->judul} | {$this->getLabel()} ({$this->harga})";
+		if ($this->tipe == "Komik") {
+			$str .= " - {$this->jmlHalaman} Halaman.";
+		} else if ($this->tipe == "Game") {
+			$str .= " - {$this->waktuMain} Jam.";
+		}
+
+		return $str;
+	}
+
 }
 
 class CetakInfoProduk{
