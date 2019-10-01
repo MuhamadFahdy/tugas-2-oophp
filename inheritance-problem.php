@@ -19,6 +19,8 @@ class Produk{
 		$this->penulis = $penulis;
 		$this->penerbit = $penerbit;
 		$this->harga = $harga;	
+		$this->jmlHalaman = $jmlHalaman;
+		$this->waktuMain = $waktuMain;
 	}
 
 	//Method
@@ -37,11 +39,11 @@ class CetakInfoProduk{
 }
 
 //menambahkan produk2
-$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
+$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0);
 
 
 //menambahkan produk3
-$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 50);
+$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50);
 
 
 //echo untuk menampilkan ke layar
