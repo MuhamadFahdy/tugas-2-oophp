@@ -11,16 +11,18 @@ class Produk{
 		   $penerbit ,
 		   $harga,
 		   $jmlHalaman,
-		   $waktuMain;
+		   $waktuMain,
+		   $tipe;
 
 	//Method
-	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0){
+	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0, $tipe){
 		$this->judul = $judul;
 		$this->penulis = $penulis;
 		$this->penerbit = $penerbit;
 		$this->harga = $harga;	
 		$this->jmlHalaman = $jmlHalaman;
 		$this->waktuMain = $waktuMain;
+		$this->tipe = $tipe;
 	}
 
 	//Method
