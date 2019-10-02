@@ -33,6 +33,16 @@ class Produk{
 	}
 
 	//method
+	public function setPenulis(){
+		$this->penulis = $penulis;
+	}
+
+	//method
+	public function getPenulis(){
+		return $this->penulis;
+	}
+
+	//method
 	public function getHarga(){
 			return $this->harga - ($this->harga * $this->diskon/100);
 		}
@@ -117,6 +127,7 @@ $Produk3->setDiskon(50);
 echo $Produk3->getHarga();
 echo "<hr>";
 
+$Produk2->setJudul(4541);
 echo $Produk2->getJudul();
 
 
