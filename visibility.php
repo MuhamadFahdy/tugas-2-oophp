@@ -95,7 +95,7 @@ echo "<br>";
 echo $Produk3->getInfoProduk(); 
 echo "<hr>";
 
-
+echo $Produk3->getHarga();
 
 //echo untuk menampilkan ke layar
 // echo "Komik : ". $Produk2->getLabel();
