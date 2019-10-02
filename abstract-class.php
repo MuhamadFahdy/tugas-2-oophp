@@ -119,7 +119,7 @@ class Game extends Produk{
 
 		public  function getInfoProduk(){
 			$str = "Game :". $this->getInfo() ."- {$this->waktuMain} jam.";
-			return $str;
+			return $str; 
 		}
 } 
 
