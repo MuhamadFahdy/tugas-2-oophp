@@ -11,18 +11,16 @@ class Produk{
 		   $penerbit ,
 		   $harga,
 		   $jmlHalaman,
-		   $waktuMain,
-		   $tipe;
+		   $waktuMain;
 
 	//Method
-	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0, $tipe){
+	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0){
 		$this->judul = $judul;
 		$this->penulis = $penulis;
 		$this->penerbit = $penerbit;
 		$this->harga = $harga;	
 		$this->jmlHalaman = $jmlHalaman;
 		$this->waktuMain = $waktuMain;
-		$this->tipe = $tipe;
 	}
 
 	//Method
@@ -31,18 +29,30 @@ class Produk{
 	}
 
 	//method 
-	public function getInfoLengkap(){
-		$str = "{$this->tipe} : {$this->judul} | {$this->getLabel()} ({$this->harga})";
-		if ($this->tipe == "Komik") {
-			$str .= " - {$this->jmlHalaman} Halaman.";
-		} else if ($this->tipe == "Game") {
-			$str .= " - {$this->waktuMain} Jam.";
-		}
+	public function getInfoProduk(){
+		$str = "{$this->judul} | {$this->getLabel()} ({$this->harga})";
 
 		return $str;
 	}
 
 }
+
+class Komik extends Produk{
+		public  function getInfoProduk(){
+			$str = "Komik : {$this->judul} | {$this->getLabel()} ({$this->harga}) - {$this->jmlHalaman} Halaman.";
+			return $str;
+		}
+} 
+
+
+class Game extends Produk{
+		public  function getInfoProduk(){
+			$str = "Game : {$this->judul} | {$this->getLabel()} ({$this->harga}) - {$this->waktuMain} jam.";
+			return $str;
+		}
+} 
+
+
 
 class CetakInfoProduk{
 	public function cetak( Produk $Produk){
@@ -53,16 +63,16 @@ class CetakInfoProduk{
 }
 
 //menambahkan produk2
-$Produk2 = new Produk("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0,"Komik");
+$Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0);
 
 
 //menambahkan produk3
-$Produk3 = new Produk("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50,"Game");
+$Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50);
 
 
-echo $Produk2->getInfoLengkap();
+echo $Produk2->getInfoProduk();
 echo "<br>";
-echo $Produk3->getInfoLengkap(); 
+echo $Produk3->getInfoProduk(); 
 //echo untuk menampilkan ke layar
 // echo "Komik : ". $Produk2->getLabel();
 // echo "<br>";
