@@ -10,7 +10,7 @@ interface InfoProduk{
 
 }
 
-abstract class Produk{
+class Produk{
 	//properti
 	private $judul ,
 		   $penulis ,
@@ -91,7 +91,7 @@ abstract class Produk{
 }
 
 //kelas anak
-class Komik extends Produk{
+class Komik extends Produk implements InfoProduk{
 		public $jmlHalaman;
 
 		public function __construct($judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0){
@@ -108,7 +108,7 @@ class Komik extends Produk{
 } 
 
 //kelas anak
-class Game extends Produk{
+class Game extends Produk implements InfoProduk{
 
 		public $waktuMain;
 
