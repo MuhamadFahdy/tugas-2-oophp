@@ -4,7 +4,7 @@
 // Komik
 // Game
 
-class Produk{
+abstract class Produk{
 	//properti
 	private $judul ,
 		   $penulis ,
@@ -75,8 +75,11 @@ class Produk{
 		return "$this->penulis,$this->penerbit";
 	}
 
-	//method 
-	public function getInfoProduk(){
+	//method abstract 
+	abstract public function getInfoProduk();
+
+	//method
+	public function getInfo(){
 		$str = "{$this->judul} | {$this->getLabel()} ({$this->harga})";
 
 		return $str;
@@ -84,6 +87,7 @@ class Produk{
 
 }
 
+//kelas anak
 class Komik extends Produk{
 		public $jmlHalaman;
 
@@ -95,12 +99,12 @@ class Komik extends Produk{
 		}
 
 		public  function getInfoProduk(){
-			$str = "Komik :" . parent::getInfoProduk() ." - {$this->jmlHalaman} Halaman.";
+			$str = "Komik :" . $this->getInfo() ." - {$this->jmlHalaman} Halaman.";
 			return $str;
 		}
 } 
 
-
+//kelas anak
 class Game extends Produk{
 
 		public $waktuMain;
@@ -114,7 +118,7 @@ class Game extends Produk{
 		}
 
 		public  function getInfoProduk(){
-			$str = "Game :". parent::getInfoProduk() ."- {$this->waktuMain} jam.";
+			$str = "Game :". $this->getInfo() ."- {$this->waktuMain} jam.";
 			return $str;
 		}
 } 
@@ -122,8 +126,21 @@ class Game extends Produk{
 
 
 class CetakInfoProduk{
-	public function cetak( Produk $Produk){
-		$str = "{$Produk->judul} | {$Produk->getLabel()} (Rp. {$Produk->harga})";
+	public $daftarProduk = array();
+
+	public function tambahProduk(Produk $produk){
+		$this->daftarProduk[] = $produk;
+	}
+
+
+
+	public function cetak(){
+		$str = "DAFTAR PRODUK : <br> ";
+
+		foreach ($this->daftarProduk as $p) {
+			$str .="- {$p->getInfoProduk()} <br>";
+		}
+
 		return $str; 
 
 	}
@@ -136,18 +153,24 @@ $Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
 //menambahkan produk3
 $Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 50);
 
+$cetakProduk = new CetakInfoProduk();
+$cetakProduk->tambahProduk($Produk2);
+$cetakProduk->tambahProduk($Produk3);
 
-echo $Produk2->getInfoProduk();
-echo "<br>";
-echo $Produk3->getInfoProduk(); 
-echo "<hr>";
+echo $cetakProduk->cetak();
 
-$Produk3->setDiskon(50);
-echo $Produk3->getHarga();
-echo "<hr>";
+ 
+// echo $Produk2->getInfoProduk();
+// echo "<br>";
+// echo $Produk3->getInfoProduk(); 
+// echo "<hr>";
 
-$Produk2->setPenulis("fahdy");
-echo $Produk2->getPenulis();
+// $Produk3->setDiskon(50);
+// echo $Produk3->getHarga();
+// echo "<hr>";
+
+// $Produk2->setPenulis("fahdy");
+// echo $Produk2->getPenulis();
 
 
 
