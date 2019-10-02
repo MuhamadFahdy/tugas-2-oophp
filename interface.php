@@ -4,6 +4,12 @@
 // Komik
 // Game
 
+interface InfoProduk{
+	//method  
+	 public function getInfoProduk();
+
+}
+
 abstract class Produk{
 	//properti
 	private $judul ,
@@ -74,9 +80,6 @@ abstract class Produk{
 	public function getLabel() {
 		return "$this->penulis,$this->penerbit";
 	}
-
-	//method abstract 
-	abstract public function getInfoProduk();
 
 	//method
 	public function getInfo(){
