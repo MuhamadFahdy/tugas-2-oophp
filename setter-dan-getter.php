@@ -31,7 +31,7 @@ class Produk{
 	}
 
 	//method
-	public function setPenulis(){
+	public function setPenulis($penulis){
 		$this->penulis = $penulis;
 	}
 
@@ -41,7 +41,7 @@ class Produk{
 	}
 
 	//method
-	public function setPenerbit(){
+	public function setPenerbit($penerbit){
 		$this->penerbit = $penerbit;
 	}
 
@@ -61,7 +61,7 @@ class Produk{
 	}
 
 	//method
-	public function setHarga(){
+	public function setHarga($harga){
 		$this->harga = $harga;
 	}
 
@@ -146,8 +146,8 @@ $Produk3->setDiskon(50);
 echo $Produk3->getHarga();
 echo "<hr>";
 
-$Produk2->setJudul(4541);
-echo $Produk2->getJudul();
+$Produk2->setPenulis("fahdy");
+echo $Produk2->getPenulis();
 
 
 
