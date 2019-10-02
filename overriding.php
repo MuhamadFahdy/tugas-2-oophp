@@ -9,18 +9,14 @@ class Produk{
 	public $judul ,
 		   $penulis ,
 		   $penerbit ,
-		   $harga,
-		   $jmlHalaman,
-		   $waktuMain;
+		   $harga;
 
 	//Method
-	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0){
+	public function __construct( $judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0){
 		$this->judul = $judul;
 		$this->penulis = $penulis;
 		$this->penerbit = $penerbit;
 		$this->harga = $harga;	
-		$this->jmlHalaman = $jmlHalaman;
-		$this->waktuMain = $waktuMain;
 	}
 
 	//Method
@@ -38,6 +34,15 @@ class Produk{
 }
 
 class Komik extends Produk{
+		public $jmlHalaman;
+
+		public function __construct($judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $jmlHalaman = 0){
+
+			parent::__construct($judul, $penulis, $penerbit, $harga);
+			$this->jmlHalaman = $jmlHalaman;
+
+		}
+
 		public  function getInfoProduk(){
 			$str = "Komik :" . parent::getInfoProduk() ." - {$this->jmlHalaman} Halaman.";
 			return $str;
@@ -46,8 +51,18 @@ class Komik extends Produk{
 
 
 class Game extends Produk{
+
+		public $waktuMain;
+
+		public function __construct($judul = "judul", $penulis = "penulis", $penerbit =  "penerbit", $harga = 0, $waktuMain = 0){
+
+			parent::__construct($judul, $penulis, $penerbit, $harga);
+			$this->waktuMain = $waktuMain;
+
+		}
+
 		public  function getInfoProduk(){
-			$str = "Game : {$this->judul} | {$this->getLabel()} ({$this->harga}) - {$this->waktuMain} jam.";
+			$str = "Game :". parent::getInfoProduk() ."- {$this->waktuMain} jam.";
 			return $str;
 		}
 } 
@@ -63,11 +78,11 @@ class CetakInfoProduk{
 }
 
 //menambahkan produk2
-$Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100, 0);
+$Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
 
 
 //menambahkan produk3
-$Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 0, 50);
+$Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 50);
 
 
 echo $Produk2->getInfoProduk();
