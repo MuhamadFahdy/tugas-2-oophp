@@ -1,5 +1,7 @@
 <?php 
 
+require_once "App/init.php";
+
 //menambahkan produk2
 $Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
 
