@@ -10,7 +10,7 @@ interface InfoProduk{
 
 }
 
-class Produk{
+abstract class Produk{
 	//properti
 	private $judul ,
 		   $penulis ,
@@ -82,11 +82,7 @@ class Produk{
 	}
 
 	//method
-	public function getInfo(){
-		$str = "{$this->judul} | {$this->getLabel()} ({$this->harga})";
-
-		return $str;
-	}
+	abstract public function getInfo();
 
 }
 
@@ -99,6 +95,13 @@ class Komik extends Produk implements InfoProduk{
 			parent::__construct($judul, $penulis, $penerbit, $harga);
 			$this->jmlHalaman = $jmlHalaman;
 
+		}
+
+		//method
+		public function getInfo(){
+		$str = "{$this->judul} | {$this->getLabel()} ({$this->harga})";
+
+		return $str;
 		}
 
 		public  function getInfoProduk(){
@@ -118,6 +121,13 @@ class Game extends Produk implements InfoProduk{
 			
 			$this->waktuMain = $waktuMain;
 
+		}
+
+		//method
+		public function getInfo(){
+		$str = "{$this->judul} | {$this->getLabel()} ({$this->harga})";
+
+		return $str;
 		}
 
 		public  function getInfoProduk(){
@@ -150,17 +160,20 @@ class CetakInfoProduk{
 }
 
 //menambahkan produk2
-$Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
+// $Produk2 = new Komik("Naruto","Masashi Kishimoto", "Shoen Jump", 30000, 100);
 
 
-//menambahkan produk3
-$Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 50);
+// //menambahkan produk3
+// $Produk3 = new Game("Uncharted","Neil Duckmann","Sony Computer",250000, 50);
 
-$cetakProduk = new CetakInfoProduk();
-$cetakProduk->tambahProduk($Produk2);
-$cetakProduk->tambahProduk($Produk3);
+// $cetakProduk = new CetakInfoProduk();
+// $cetakProduk->tambahProduk($Produk2);
+// $cetakProduk->tambahProduk($Produk3);
 
-echo $cetakProduk->cetak();
+// echo $cetakProduk->cetak();
+
+$tes = new Produk();
+
 
  
 // echo $Produk2->getInfoProduk();
