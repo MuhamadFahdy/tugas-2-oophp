@@ -43,6 +43,16 @@ class Produk{
 	}
 
 	//method
+	public function setPenerbit(){
+		$this->penerbit = $penerbit;
+	}
+
+	//method
+	public function getPenerbit(){
+		return $this->penerbit;
+	}
+
+	//method
 	public function getHarga(){
 			return $this->harga - ($this->harga * $this->diskon/100);
 		}
