@@ -53,6 +53,11 @@ class Produk{
 	}
 
 	//method
+	public function setHarga(){
+		$this->harga = $harga;
+	}
+
+	//method
 	public function getHarga(){
 			return $this->harga - ($this->harga * $this->diskon/100);
 		}
