@@ -23,6 +23,11 @@ class Produk{
 	}
 
 	//method
+	public function setJudul($judul){
+		$this->judul = $judul;
+	}
+
+	//method
 	public function getJudul(){
 		return $this->judul;
 	}
